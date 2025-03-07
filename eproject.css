@@ -1,0 +1,53 @@
+
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f9ff;
+    color: #333;
+    line-height: 1.6;
+  }
+
+
+
+.navbar {
+    height: 50px !important; /* Reduce navbar height */
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    background-color: #ADD8E6 !important;
+}
+
+.navbar-brand img {
+    height: 40px; /* Reduce logo size if necessary */
+    width: auto;
+}
+
+.navbar-nav .nav-link {
+    padding: 5px 10px; /* Reduce padding around links */
+    font-size: 14px; /* Reduce font size if needed */
+}
+
+.nav-icons i {
+    font-size: 16px; /* Reduce icon size */
+    margin-left: 8px;
+}
+.navbar-brand {
+    margin-right: auto !important; /* Pushes logo to the left */
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+}
+
+.container {
+    padding: 0 !important;
+    margin: 0 auto;
+}
+
+.footer {
+    background-color: #81cfe9;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+ 

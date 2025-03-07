@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="eproject.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dde8ec;
+    color: #333;
+    padding: 0; 
+    margin: 0;  
+}
+
+
+/* .navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.navbar .navbar-collapse {
+    flex-grow: 1;
+}
+
+.navbar a.me-3 {
+    margin-left: 10px; /* Adjust spacing between icons */
+/* } */ 
+
+
+
+.container-fluid {
+    width: 90%; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 40px;
+}
+
+        .col {
+            flex: 1 1 calc(25% - 20px);
+            max-width: calc(25% - 20px);
+            height: 250px; /* Increasing card height */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            cursor: pointer;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .col:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 1023px) {
+            .col {
+                flex: 1 1 calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .col {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .col:hover .overlay {
+            opacity: 1;
+        }
+
+        .click-more {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .click-more a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+    #heading {
+    text-align: center;
+    padding: 20px;
+    margin: 20px 0;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease-in-out;
+}
+
+#heading h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+    padding: 10px;
+    display: inline-block;
+    border-bottom: 4px solid white;
+    transition: transform 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+#heading:hover {
+    background: linear-gradient(to right, #00c6ff, #007bff);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+#heading h1:hover {
+    transform: scale(1.1);
+    letter-spacing: 4px;
+}
+
+
+  /* Discount Banner Styling */
+  #discount-banner {
+            text-align: center;
+            background: linear-gradient(to right, #ff6a00, #ee0979);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 80%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Animated Text */
+        .discount-text {
+            white-space: nowrap;
+            display: inline-block;
+            position: relative;
+            animation: slideIn 4s ease-in-out infinite alternate;
+        }
+
+        /* Keyframes for Animation */
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            50% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('mouseover', function() {
+                    this.style.color = '#f8f9fa';
+                });
+                link.addEventListener('mouseout', function() {
+                    this.style.color = 'white';
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="./imgs/resized_logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="./Product.html">Products</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="./AboutUs.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="./contact.html">Contact</a>
+                  </li>
+              </ul>
+          </div>
+          <a href="./login.html" class="me-3">
+            <i class="bi bi-door-open"></i>
+        </a>
+        <a href="https:www.//facebook.com" class="me-3">
+        <i class="bi bi-facebook ms-3"></i>
+        </a>
+        <a href="https:www.//Whatsapp.com" class="me-3">
+        <i class="bi bi-whatsapp ms-3"></i>
+        </a>
+        <a href="https:www.//Instagram.com" class="me-3">
+        <i class="bi bi-instagram ms-3"></i>
+        </a>
+        <a href="https:www.//Twitter.com" class="me-3">
+        <i class="bi bi-twitter-x ms-3"></i>
+        </a>
+        </div>
+    </nav>
+  
+
+    <div id="discount-banner">
+        <p class="discount-text">🔥 Hurry! Get 30% Discount on All Products! 🔥</p>
+    </div>
+    
+    <div id="heading">
+        <h1>Our Products</h1>
+    </div>
+    
+
+    <div class="container-fluid">
+        <div class="col" style="background-image: url('imgs/1.jpg');">
+            <div class="overlay">Essential Electrical Tools & Accessories! ⚡</div>
+            <div class="click-more"><a href="./card1.html">Click for more</a></div>
+        </div>
+        <div class="col" style="background-image: url('imgs/2.jpg');">
+            <div class="overlay">⚡ Complete Electrical Toolkit – Essential for Every Project! ⚡</div>
+            <div class="click-more"><a href="./card2.html">Click for more</a></div>
+        </div>
+        <div class="col" style="background-image: url('imgs/3.jpg');">
+            <div class="overlay">🔌 Universal Wall Socket with Switch – Safe & Durable! 🔌</div>
+            <div class="click-more"><a href="./card3.html">Click for more</a></div>
+        </div>
+        <div class="col" style="background-image: url('imgs/4.jpg');">
+            <div class="overlay">⚡ Modern Electrical Outlet & Switch – Smart & Efficient! ⚡</div>
+            <div class="click-more"><a href="./card4.html">Click for more</a></div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col" style="background-image: url('imgs/5.jpg');">
+            <div class="overlay">Harvell Electrical Plastic Power Button Socket and Switch</div>
+            <div class="click-more"><a href="./card5.html">Click for more</a></div>
+        </div>
+        <div class="col" style="background-image: url('imgs/6.jpg');">
+            <div class="overlay">💡 Versatile Light Bulb Collection – Illuminate Your Space! 🔆</div>
+            <div class="click-more"><a href="./card6.html">Click for more</a></div>
+        </div>
+        <div class="col" style="background-image: url('imgs/7.jpg');">
+            <div class="overlay">Button Socket and Switch</div>
+            <div class="click-more"><a href="./card7.html">Click for more</a></div>
+        </div>
+        <div class="col" style="background-image: url('imgs/8.jpg');">
+            <div class="overlay">Button Socket and Switch</div>
+            <div class="click-more"><a href="./card8.html">Click for more</a></div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col" style="background-image: url('imgs/9.jpg');">
+            <div class="overlay">4-Socket Power Extension with Adapters</div>
+            <div class="click-more"><a href="./card9.html">Click for more</a></div>
+        </div>
+        <div class="col" style="background-image: url('imgs/10.jpg');">
+            <div class="overlay">LumiGlow Edison Bulbs</div>
+            <div class="click-more"><a href="./card10.html">Click for more</a></div>
+        </div>
+        <div class="col" style="background-image: url('imgs/11.jpg');">
+            <div class="overlay">LumiGlow Edison Bulbs</div>
+            <div class="click-more"><a href="./card11.html">Click for more</a></div>
+        </div>
+        <div class="col" style="background-image: url('imgs/12.jpg');">
+            <div class="overlay">Essential Electrical Toolkit – Everything You Need! ⚡</div>
+            <div class="click-more"><a href="./card12.html">Click for more</a></div>
+        </div>
+    </div> 
+    <div id="discount-banner">
+        <p class="discount-text">🔥 Hurry! Get 30% Discount on All Products! 🔥</p>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Your Company. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        <a href="https://www.facebook.com" class="me-3">
+            <i class="bi bi-facebook ms-3"></i>
+            </a>
+            <a href="https://www.Whatsapp.com" class="me-3">
+            <i class="bi bi-whatsapp ms-3"></i>
+            </a>
+            <a href="https://www.Instagram.com" class="me-3">
+            <i class="bi bi-instagram ms-3"></i>
+            </a>
+            <a href="https://www.Twitter.com" class="me-3">
+            <i class="bi bi-twitter-x ms-3"></i>
+            </a>
+    </footer>
+</body>
+</html>

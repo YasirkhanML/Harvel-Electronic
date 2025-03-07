@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        .payment-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .payment-header {
+            background-color: #2f3e57;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+            border-radius: 10px 10px 0 0;
+        }
+        .form-control {
+            margin-bottom: 10px;
+        }
+        .btn-submit {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-cancel {
+            background-color: #2f3e57;
+            color: white;
+        }
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .payment-icons img {
+            width: 40px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-header" id="order-overview">ORDER OVERVIEW</div>
+        <form onsubmit="return validateForm(event)">
+            <label for="payment-method">PLEASE SELECT A PAYMENT METHOD</label>
+            <select class="form-control" id="payment-method">
+                <option>Credit / Debit Card</option>
+                <option>PayPal</option>
+            </select>
+            
+            <label for="first-name">First name</label>
+            <input type="text" id="first-name" class="form-control" placeholder="John" required>
+            
+            <label for="last-name">Last name</label>
+            <input type="text" id="last-name" class="form-control" placeholder="Doe" required>
+            
+            <div class="mb-3">
+                <label for="cardNumber" class="form-label">Card Number</label>
+                <input type="text" class="form-control" placeholder="••• ••• ••• •••" id="cardNumber" pattern="[0-9]*" oninput="validateCardNumber(this)" maxlength="16" required>
+                <small id="error-message"></small>
+            </div>
+
+            <label for="cvv">CVV</label>
+            <input type="number" id="cvv" class="form-control" placeholder="•••" required>
+            
+            <div class="payment-icons">
+                <img src="./imgs/visa.png" alt="Visa">
+                <img src="./imgs/master.png" alt="MasterCard">
+                <img src="./imgs/paypal.png" alt="PayPal">
+                <img src="./imgs/amex.png" alt="American Express">
+            </div>
+            
+            <label for="expiry">Valid until</label>
+            <div class="d-flex">
+                <select class="form-control me-2" id="expiry-month">
+                    <option>Month</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+                <select class="form-control" id="expiry-year">
+                    <option>Year</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                    <option>2027</option>
+                    <option>2028</option>
+                    <option>2029</option>
+                </select>
+            </div>
+            <div class="d-flex justify-content-between mt-3">
+                <button type="submit" class="btn btn-submit mt-3">Submit</button>
+                <button type="button" class="btn btn-cancel mt-2">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Function to validate card number (only numbers)
+        function validateCardNumber(input) {
+            input.value = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+        }
+
+        // Function to validate form submission
+        function validateForm(event) {
+            let cardNumber = document.getElementById("cardNumber").value;
+            let errorMessage = document.getElementById("error-message");
+
+            if (cardNumber.length !== 15 && cardNumber.length !== 16) {
+                errorMessage.innerText = "Card number must be 15 or 16 digits!";
+                errorMessage.style.color = "red";
+                event.preventDefault(); // Prevent form submission
+                return false;
+            } else {
+                alert("Payment has been accepted!");
+                return true;
+            }
+        }
+
+       
+    // Load and update order price dynamically from localStorage
+    window.onload = function () {
+        let quantity = localStorage.getItem("selectedQuantity") || "1";
+        let totalPrice = localStorage.getItem("totalPrice") || "49.99";
+
+        // Convert price to Euro (1 USD ≈ 0.92 EUR)
+        let priceInEuro = (parseFloat(totalPrice) * 0.92).toFixed(2);
+
+        // Update order overview
+        document.getElementById("order-overview").innerHTML = `ORDER OVERVIEW - ${quantity} item(s) - $${totalPrice} (€${priceInEuro})`;
+    };
+
+    </script>
+</body>
+</html>

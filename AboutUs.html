@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Harvel Electric Inc.</title>
+    <link rel="stylesheet" href="eproject.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E3F2FD;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-top: 20px;
+            flex-grow: 1;
+        }
+        h1, h2 {
+            color: #1565C0;
+        }
+        p {
+            color: #424242;
+            font-size: 16px;
+        }
+        .team {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .member {
+            background: #BBDEFB;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 200px;
+        }
+        .footer {
+            padding: 10px;
+            background: #81cfe9;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+  /* Discount Banner Styling */
+  #discount-banner {
+            text-align: center;
+            background: linear-gradient(to right, #ff6a00, #ee0979);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            width: 80%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Animated Text */
+        .discount-text {
+            white-space: nowrap;
+            display: inline-block;
+            position: relative;
+            animation: slideIn 4s ease-in-out infinite alternate;
+        }
+
+        /* Keyframes for Animation */
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            50% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html"><img src="./imgs/resized_logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="./Product.html">Products</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="./AboutUs.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="./contact.html">Contact</a>
+                  </li>
+              </ul>
+          </div>
+          <a href="./login.html" class="me-3">
+            <i class="bi bi-door-open"></i>
+        </a>
+        <a href="https:www.//facebook.com" class="me-3">
+        <i class="bi bi-facebook ms-3"></i>
+        </a>
+        <a href="https:www.//Whatsapp.com" class="me-3">
+        <i class="bi bi-whatsapp ms-3"></i>
+        </a>
+        <a href="https:www.//Instagram.com" class="me-3">
+        <i class="bi bi-instagram ms-3"></i>
+        </a>
+        <a href="https:www.//Twitter.com" class="me-3">
+        <i class="bi bi-twitter-x ms-3"></i>
+        </a>
+        </div>
+    </nav>
+  
+    
+    
+    <div id="discount-banner">
+        <p class="discount-text">🔥 Hurry! Get 30% Discount on All Products! 🔥</p>
+    </div>
+
+    <div class="container">
+        <h1>Welcome to Harvel Electric Inc.</h1>
+        <p>Your trusted partner in electrical components. Since our founding, we have been dedicated to providing innovation, quality, and customer satisfaction.</p>
+        <h2>Our Mission</h2>
+        <p>We strive to deliver top-quality electrical components that power homes, businesses, and industries with efficiency and reliability.</p>
+        <h2>Meet Our Team</h2>
+        <div class="team">
+            <div class="member">
+                <h3>Areesh</h3>
+                <p>Co-Founder & CEO</p>
+            </div>
+            <div class="member">
+                <h3>Muneeb</h3>
+                <p>Chief Technology Officer</p>
+            </div>
+            <div class="member">
+                <h3>Talha</h3>
+                <p>Head of Operations</p>
+            </div>
+            <div class="member">
+                <h3>Rehan</h3>
+                <p>Marketing & Sales Director</p>
+            </div>
+        </div>
+    </div>
+    <div id="discount-banner">
+        <p class="discount-text">🔥 Hurry! Get 30% Discount on All Products! 🔥</p>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2025 Your Company. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        <a href="https://www.facebook.com" class="me-3">
+            <i class="bi bi-facebook ms-3"></i>
+            </a>
+            <a href="https://www.Whatsapp.com" class="me-3">
+            <i class="bi bi-whatsapp ms-3"></i>
+            </a>
+            <a href="https://www.Instagram.com" class="me-3">
+            <i class="bi bi-instagram ms-3"></i>
+            </a>
+            <a href="https://www.Twitter.com" class="me-3">
+            <i class="bi bi-twitter-x ms-3"></i>
+            </a>
+    </footer>
+</body>
+</html>
